@@ -1,4 +1,4 @@
-let input = document.getElementById("taskInput");
+let Input = document.getElementById("taskInput");
 let addBtn = document.getElementById("addBtn");
 let taskList = document.getElementById("taskList");
 
@@ -9,14 +9,14 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 showTasks();
 
 addBtn.addEventListener("click", function () {
-  let task = input.value;
+  let task = Input.value;
 
   if (task === "") return;
 
   tasks.push(task);
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
-  input.value = "";
+  Input.value = "";
   showTasks();
 });
 
